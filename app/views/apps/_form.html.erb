@@ -1,0 +1,7 @@
+<%= form_for(@app) do |form| %>
+  
+  <%= form.label :name, "Enter name of the new app: " %>
+  <%= form.text_field :name %>
+  <%= form.submit "Save!" %>
+  
+<% end  %>

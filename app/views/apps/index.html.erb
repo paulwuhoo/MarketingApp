@@ -1,0 +1,20 @@
+<h1>More Apps</h1>
+
+<p style=color:green>
+<% if flash[:notice].present? %>
+  <%= flash[:notice] %>
+<% end %>
+</p>
+
+<%= link_to "Add a new app", new_app_url %>
+<ol>
+  <% @apps.each do |app| %>
+    <li><%= link_to app.name, app_url(app.id) %>
+    | 
+    <%= link_to "Delete", app_url(app.id),
+     :method => :delete, :confirm => "Are you sure?" 
+     %>
+     </li>
+  <% end  %>
+
+</ol>
